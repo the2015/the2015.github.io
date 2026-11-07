@@ -36,6 +36,17 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Cloudflare 实战笔记',
+        items: [
+          { text: 'DNS、橙云与灰云', link: '/posts/cloudflare-dns-proxy' },
+          { text: '给博客绑定独立域名', link: '/posts/cloudflare-github-pages-domain' },
+          { text: 'HTTPS 与源站证书', link: '/posts/cloudflare-https-origin-cert' },
+          { text: '一次 525 排查实录', link: '/posts/cloudflare-525-troubleshooting' },
+          { text: 'Tunnel 访问本地服务', link: '/posts/cloudflare-tunnel-local-service' },
+          { text: '缓存配置与排查', link: '/posts/cloudflare-cache-debugging' }
+        ]
+      },
+      {
         text: '其他',
         items: [{ text: '关于我', link: '/about' }]
       }
