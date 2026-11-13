@@ -9,7 +9,7 @@ date: 2026-11-06
 
 ## 技术类
 
-- [ ] 折腾过的自动化工具与配置记录
+- [x] [零成本笔记本行情日报](./notebook-market-daily)（折腾过的自动化工具与配置记录）
 - [ ] 一次完整的项目踩坑复盘
 - [ ] 效率工具组合拳：我的工作流是怎么串起来的
 
@@ -31,5 +31,6 @@ date: 2026-11-06
 
 ## 已发布
 
+- [x] [不花一分钱，GitHub Actions 每天给我推笔记本行情](./notebook-market-daily)
 - [x] [Hello VitePress](./hello-vitepress)
 - [x] [部署到 GitHub Pages](./deploy-to-github-pages)

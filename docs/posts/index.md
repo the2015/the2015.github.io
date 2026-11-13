@@ -15,6 +15,7 @@
 
 按时间倒序排列：
 
+- [不花一分钱，GitHub Actions 每天给我推笔记本行情](./notebook-market-daily) — 2026-11-13
 - [近期写作计划](./writing-plan) — 2026-11-06
 - [部署到 GitHub Pages](./deploy-to-github-pages) — 2026-11-06
 - [Hello VitePress](./hello-vitepress) — 2026-11-06

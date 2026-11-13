@@ -30,6 +30,7 @@ export default defineConfig({
       {
         text: '文章',
         items: [
+          { text: '不花一分钱的行情日报', link: '/posts/notebook-market-daily' },
           { text: 'Hello VitePress', link: '/posts/hello-vitepress' },
           { text: '部署到 GitHub Pages', link: '/posts/deploy-to-github-pages' },
           { text: '近期写作计划', link: '/posts/writing-plan' }
