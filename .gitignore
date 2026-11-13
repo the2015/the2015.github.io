@@ -1,6 +1,9 @@
 node_modules/
 docs/.vitepress/dist/
 docs/.vitepress/cache/
+docs/public/feed.xml
+.preview/
+.preview-browser/
 *.log
 .DS_Store
 Thumbs.db

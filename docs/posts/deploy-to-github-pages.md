@@ -1,6 +1,7 @@
 ---
 title: 部署到 GitHub Pages
 date: 2026-11-06
+description: 记录 VitePress 博客通过 GitHub Actions 构建并部署到 GitHub Pages 的完整流程与验证方法。
 ---
 
 # 这篇博客是怎么部署的
@@ -60,4 +61,10 @@ gh run list --repo the2015/the2015.github.io --limit 3
 
 - 构建失败先看 Actions 日志，九成是依赖或 Markdown 语法问题
 - 本地先 `pnpm build` 通过再 push，能把反馈周期从几分钟缩短到几秒
-- Pages 部署有缓存，改完没生效时强刷（Ctrl+F5）再确认
+- 改完没生效时，先检查构建、部署和网络响应，再区分边缘缓存与浏览器缓存；详见[缓存排查](./cloudflare-cache-debugging)。
+
+## 继续阅读
+
+- 继续看 [Cloudflare 实战笔记索引](./#cloudflare-实战笔记)，了解域名、HTTPS 和缓存配置。
+- 本站源码和部署问题可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 讨论。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

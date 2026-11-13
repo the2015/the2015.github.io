@@ -1,3 +1,8 @@
+---
+title: 关于 the2015
+description: 记录低成本云服务、Cloudflare 排障和 GitHub Actions 自动化的个人开发者博客，以及项目和订阅入口。
+---
+
 # 关于我
 
 你好，我是 **the2015** 👋
@@ -13,6 +18,7 @@
 ## 联系我
 
 - GitHub：[the2015](https://github.com/the2015)
+- 想收到新文章，可以[订阅 RSS](/subscribe)。
 - 有想聊的可以直接在仓库提 [Issue](https://github.com/the2015/the2015.github.io/issues)
 
 ## 关于本站

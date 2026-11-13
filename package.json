@@ -5,8 +5,15 @@
   "type": "module",
   "packageManager": "pnpm@10.33.0",
   "scripts": {
-    "dev": "vitepress dev docs",
-    "build": "vitepress build docs",
+    "dev": "pnpm generate:feed && vitepress dev docs",
+    "generate:feed": "node scripts/generate-feed.mjs",
+    "build": "pnpm generate:feed && vitepress build docs",
+    "test": "pnpm test:promotion && pnpm test:feed && pnpm test:head",
+    "test:promotion": "pnpm generate:feed && node --test tests/promotion-check.test.mjs",
+    "test:feed": "node --test tests/feed.test.mjs",
+    "test:head": "node --test tests/promotion-head.test.mjs",
+    "test:site": "node --test tests/built-site.test.mjs",
+    "check": "pnpm test && pnpm build && pnpm test:site",
     "preview": "vitepress preview docs"
   },
   "devDependencies": {

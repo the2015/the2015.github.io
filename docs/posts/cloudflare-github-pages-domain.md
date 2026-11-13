@@ -70,15 +70,13 @@ GitHub 页面上的 DNS 检查通过、证书准备好后，再启用 **Enforce 
 
 ## 调整 VitePress 的站点地址
 
-实际切换域名时，将 `docs/.vitepress/config.mts` 中的 sitemap 地址改为新地址：
+实际切换域名时，将 `scripts/site-config.mjs` 中的 `siteUrl` 改为新地址：
 
-```ts
-sitemap: {
-  hostname: 'https://blog.example.com'
-},
+```js
+export const siteUrl = 'https://blog.example.com'
 ```
 
-这个用户主站部署在域名根路径，不需要额外设置成仓库子路径。如果之后添加 canonical、RSS 或分享元信息，也要同步检查它们使用的站点地址。
+VitePress 配置和 RSS 生成器都读取这个值，用于 sitemap、canonical 和分享元信息。还要同步修改 `docs/public/robots.txt` 的 Sitemap 地址、订阅说明页和 README 中展示的地址。这个用户主站部署在域名根路径，不需要额外设置成仓库子路径。
 
 在 PowerShell 中构建，并检查 sitemap：
 
@@ -114,3 +112,9 @@ curl -sS -L -o /dev/null -w 'status=%{http_code} final=%{url_effective}\n' \
 - [GitHub：管理 GitHub Pages 自定义域名](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site)
 - [GitHub：使用 HTTPS 保护 GitHub Pages 站点](https://docs.github.com/en/pages/getting-started-with-github-pages/securing-your-github-pages-site-with-https)
 - [VitePress：Sitemap](https://vitepress.dev/guide/sitemap-generation)
+
+## 继续阅读
+
+- 按完整链路继续看 [Cloudflare 实战笔记索引](./#cloudflare-实战笔记)。
+- 本站源码和部署问题可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 讨论。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

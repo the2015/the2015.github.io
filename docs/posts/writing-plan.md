@@ -1,6 +1,7 @@
 ---
 title: 近期写作计划
 date: 2026-11-06
+description: 整理 Cloudflare、GitHub Actions 自动化和个人项目复盘的写作路线，方便按系列阅读。
 ---
 
 # 近期写作计划
@@ -34,3 +35,9 @@ date: 2026-11-06
 - [x] [不花一分钱，GitHub Actions 每天给我推笔记本行情](./notebook-market-daily)
 - [x] [Hello VitePress](./hello-vitepress)
 - [x] [部署到 GitHub Pages](./deploy-to-github-pages)
+
+## 继续阅读
+
+- 先看 [全部文章](./)，按 Cloudflare 和自动化两个方向阅读。
+- 想建议下一个主题，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到计划外的新文章，订阅 [RSS](../feed.xml)。

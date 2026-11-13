@@ -1,6 +1,7 @@
 ---
 title: Hello VitePress
 date: 2026-11-06
+description: 用 VitePress、GitHub Pages 和 GitHub Actions 搭建一个免费、可持续更新的个人技术博客。
 ---
 
 # Hello VitePress
@@ -30,3 +31,9 @@ date: 2026-11-06
 计划写什么可以看[近期写作计划](./writing-plan)。如果你对某篇内容有想法，欢迎到 [GitHub 仓库](https://github.com/the2015/the2015.github.io)提 Issue。
 
 就到这里，下一篇见。
+
+## 继续阅读
+
+- 继续看[部署到 GitHub Pages](./deploy-to-github-pages)，复现本站的发布链路。
+- 想交流写作、配置或发现问题，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到新的技术实践，订阅 [RSS](../feed.xml)。

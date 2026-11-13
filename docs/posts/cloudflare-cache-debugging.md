@@ -144,3 +144,9 @@ https://blog.example.com/cache-demo.css
 - [Cloudflare：Cache-Control](https://developers.cloudflare.com/cache/concepts/cache-control/)
 - [Cloudflare：按单个 URL 清理缓存](https://developers.cloudflare.com/cache/how-to/purge-cache/purge-by-single-file/)
 - [VitePress：静态资源](https://vitepress.dev/guide/asset-handling)
+
+## 继续阅读
+
+- 回到 [Cloudflare 实战笔记索引](./#cloudflare-实战笔记)，继续看完整排查链路。
+- 想交流缓存规则或补充验证结果，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

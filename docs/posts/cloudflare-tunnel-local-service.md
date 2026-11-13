@@ -121,3 +121,9 @@ Service URL 是从 **cloudflared 所在的环境**发起连接的地址。
 - [Cloudflare：通过控制台创建隧道](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/get-started/create-remote-tunnel/)
 - [Cloudflare：自托管应用的 Access 配置](https://developers.cloudflare.com/cloudflare-one/access-controls/applications/http-apps/self-hosted-public-app/)
 - [Cloudflare：连接检查](https://developers.cloudflare.com/cloudflare-one/networks/connectors/cloudflare-tunnel/troubleshoot-tunnels/connectivity-prechecks/)
+
+## 继续阅读
+
+- 回到 [Cloudflare 实战笔记索引](./#cloudflare-实战笔记)，继续看域名、HTTPS 和缓存。
+- 想讨论 Tunnel 的路由或访问控制，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

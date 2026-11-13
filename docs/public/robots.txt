@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://the2015.github.io/sitemap.xml

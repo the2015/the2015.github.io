@@ -104,3 +104,9 @@ curl -sS -D - -o /dev/null https://blog.example.com/
 - [Cloudflare：Proxy status](https://developers.cloudflare.com/dns/proxy-status/)
 - [Cloudflare：DNSSEC](https://developers.cloudflare.com/dns/dnssec/)
 - [Cloudflare：支持的网络端口](https://developers.cloudflare.com/fundamentals/reference/network-ports/)
+
+## 继续阅读
+
+- 按完整链路继续看 [Cloudflare 实战笔记索引](./#cloudflare-实战笔记)。
+- 想讨论配置或补充案例，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

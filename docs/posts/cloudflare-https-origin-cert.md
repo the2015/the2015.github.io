@@ -134,3 +134,9 @@ curl -sS -D - -o /dev/null https://blog.example.com/
 - [Cloudflare：Origin CA certificates](https://developers.cloudflare.com/ssl/origin-configuration/origin-ca/)
 - [Nginx：配置 HTTPS](https://nginx.org/en/docs/http/configuring_https_servers.html)
 - [Cloudflare：Error 526](https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-5xx-errors/error-526/)
+
+## 继续阅读
+
+- 接着看 [一次 Cloudflare 525 排查实录](./cloudflare-525-troubleshooting)，把证书问题和接入平台拦截区分开。
+- 想讨论命令或补充案例，可以在 [博客 GitHub 仓库](https://github.com/the2015/the2015.github.io/issues) 提 Issue。
+- 想收到新文章，订阅 [RSS](../feed.xml)。

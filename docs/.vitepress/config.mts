@@ -1,10 +1,20 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type HeadConfig } from 'vitepress'
+import { siteUrl, siteTitle, siteDescription } from '../../scripts/site-config.mjs'
+import { promotionHead } from '../../scripts/promotion-head.mjs'
+
+function pageUrl(page: string) {
+  const route = page
+    .replace(/\.md$/, '')
+    .replace(/\/index$/, '/')
+    .replace(/^index$/, '/')
+  return new URL(`/${route.replace(/^\/+/, '')}`, `${siteUrl}/`).toString()
+}
 
 // https://vitepress.dev/zh/reference/site-config
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'the2015 的博客',
-  description: '记录技术实践、工具效率与日常思考的个人博客',
+  title: siteTitle,
+  description: siteDescription,
   cleanUrls: true,
   lastUpdated: true,
   head: [
@@ -15,25 +25,66 @@ export default defineConfig({
         type: 'image/svg+xml',
         href: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%93%9D%3C/text%3E%3C/svg%3E"
       }
-    ]
+    ],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', title: 'the2015 博客 RSS', href: `${siteUrl}/feed.xml` }],
+    ...promotionHead() as HeadConfig[]
   ],
+  transformHead({ page, pageData, title, description }) {
+    if (page === '404.md') return [['meta', { name: 'robots', content: 'noindex' }]]
+    const frontmatter = pageData.frontmatter ?? {}
+    const pageTitle = frontmatter.title || title
+    const pageDescription = frontmatter.description || description || siteDescription
+    const canonical = pageUrl(page)
+    const isArticle = page.startsWith('posts/') && page !== 'posts/index.md'
+
+    return [
+      ['meta', { property: 'og:type', content: isArticle ? 'article' : 'website' }],
+      ['meta', { property: 'og:title', content: pageTitle }],
+      ['meta', { property: 'og:description', content: pageDescription }],
+      ['meta', { property: 'og:url', content: canonical }],
+      ['meta', { property: 'og:site_name', content: 'the2015' }],
+      ['meta', { property: 'og:locale', content: 'zh_CN' }],
+      ['meta', { property: 'og:image', content: `${siteUrl}/og-cover.png` }],
+      ['meta', { property: 'og:image:width', content: '1200' }],
+      ['meta', { property: 'og:image:height', content: '630' }],
+      ['meta', { property: 'og:image:alt', content: 'the2015：低成本云服务与自动化实践' }],
+      ['meta', { name: 'twitter:card', content: 'summary_large_image' }],
+      ['meta', { name: 'twitter:title', content: pageTitle }],
+      ['meta', { name: 'twitter:description', content: pageDescription }],
+      ['meta', { name: 'twitter:image', content: `${siteUrl}/og-cover.png` }],
+      ['link', { rel: 'canonical', href: canonical }]
+    ]
+  },
   sitemap: {
-    hostname: 'https://the2015.github.io'
+    hostname: siteUrl
   },
   themeConfig: {
+    siteTitle: 'the2015 · 技术实践',
     nav: [
       { text: '首页', link: '/' },
+      { text: '专题', items: [
+        { text: 'Cloudflare 实战', link: '/topics/cloudflare' },
+        { text: '零成本自动化', link: '/topics/automation' },
+        { text: '个人项目部署', link: '/topics/deployment' }
+      ] },
       { text: '文章', link: '/posts/' },
+      { text: '订阅', link: '/subscribe' },
       { text: '关于', link: '/about' }
     ],
     sidebar: [
       {
-        text: '文章',
+        text: '按主题阅读',
+        items: [
+          { text: 'Cloudflare 实战', link: '/topics/cloudflare' },
+          { text: '零成本自动化', link: '/topics/automation' },
+          { text: '个人项目部署', link: '/topics/deployment' }
+        ]
+      },
+      {
+        text: '自动化与博客部署',
         items: [
           { text: '不花一分钱的行情日报', link: '/posts/notebook-market-daily' },
-          { text: 'Hello VitePress', link: '/posts/hello-vitepress' },
-          { text: '部署到 GitHub Pages', link: '/posts/deploy-to-github-pages' },
-          { text: '近期写作计划', link: '/posts/writing-plan' }
+          { text: '部署到 GitHub Pages', link: '/posts/deploy-to-github-pages' }
         ]
       },
       {
@@ -49,7 +100,12 @@ export default defineConfig({
       },
       {
         text: '其他',
-        items: [{ text: '关于我', link: '/about' }]
+        items: [
+          { text: 'Hello VitePress', link: '/posts/hello-vitepress' },
+          { text: '近期写作计划', link: '/posts/writing-plan' },
+          { text: '订阅与联系', link: '/subscribe' },
+          { text: '关于我', link: '/about' }
+        ]
       }
     ],
     socialLinks: [{ icon: 'github', link: 'https://github.com/the2015' }],
@@ -75,7 +131,7 @@ export default defineConfig({
     lightModeSwitchTitle: '切换到浅色模式',
     darkModeSwitchTitle: '切换到深色模式',
     footer: {
-      message: '基于 VitePress 构建 · 部署于 GitHub Pages',
+      message: '低成本云服务与自动化实践 · <a href="/subscribe">订阅更新</a> · <a href="/feed.xml">RSS</a>',
       copyright: 'Copyright © 2026 the2015'
     }
   }
